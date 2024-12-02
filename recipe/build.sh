@@ -11,21 +11,22 @@ download_licenses() {
 
 export -f download_licenses
 
-mkdir -p ${PREFIX}/libexec/${PKG_NAME}
+mkdir -p ${PREFIX}/libexec/jacoco
 mkdir -p ${PREFIX}/bin
 
 # Build with maven
 mvn clean verify -DskipTests -Dmaven.compiler.release=17
 unzip jacoco/target/jacoco-*.zip
-cp lib/*.jar ${PREFIX}/libexec/${PKG_NAME}
+cp lib/*.jar ${PREFIX}/libexec/jacoco
 
 # Create bash and batch files
-tee ${PREFIX}/bin/${PKG_NAME} << EOF
+tee ${PREFIX}/bin/jacoco << EOF
 #!/bin/sh
 exec \${JAVA_HOME}/bin/java -jar \${CONDA_PREFIX}/libexec/jacoco/jacococli.jar "\$@"
 EOF
+chmod +x ${PREFIX}/bin/jacoco
 
-tee ${PREFIX}/bin/${PKG_NAME}.cmd << EOF
+tee ${PREFIX}/bin/jacoco.cmd << EOF
 call %JAVA_HOME%\bin\java -jar %CONDA_PREFIX%\libexec\jacoco/jacococli.jar %*
 EOF
 
