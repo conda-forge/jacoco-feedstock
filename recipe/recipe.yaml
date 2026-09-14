@@ -1,5 +1,5 @@
 context:
-  version: "0.8.14"
+  version: "0.8.15"
 
 package:
   name: jacoco
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/jacoco/jacoco/archive/v${{ version }}.tar.gz
-  sha256: 764d75713a41473241b2bb88a69f813f786c87c8a6a5e6f7372b819f70e90bd4
+  sha256: 15af5111ddbea7cd8b31ce7e4d7acdc18fe2afba2222b4ddbb585d30bfbe6b15
 
 build:
   number: 0
@@ -17,7 +17,7 @@ requirements:
   build:
     - findutils
     - maven
-    - openjdk =17
+    - openjdk =21
     - unzip
   run:
     - openjdk
