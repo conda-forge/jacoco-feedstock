@@ -1,5 +1,5 @@
 context:
-  version: "0.8.15"
+  version: "0.8.16"
 
 package:
   name: jacoco
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/jacoco/jacoco/archive/v${{ version }}.tar.gz
-  sha256: 15af5111ddbea7cd8b31ce7e4d7acdc18fe2afba2222b4ddbb585d30bfbe6b15
+  sha256: 82ed6d4af30dae1802bf5a7afe7e3b80b743bd4ec08ffe6847cc11f7dd44d959
 
 build:
   number: 0
